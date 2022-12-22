@@ -1,15 +1,13 @@
 import { _decorator, Component, Node } from 'cc';
 const { ccclass, property } = _decorator;
 
-@ccclass('LevelController')
-export class LevelController extends Component {
+@ccclass('WinUI')
+export class WinUI extends Component {
 
-    callback;
+    callback
     start() {
 
     }
-
-
     setUp(callback){
         this.callback = callback;
     }
@@ -17,7 +15,8 @@ export class LevelController extends Component {
         
     }
 
-    public pigDie(){
+    onClickNextLevel(){
+        this.node.destroy();
         this.callback();
     }
 }
